@@ -16,7 +16,6 @@ $(document).ready(function(){
 				// JSON call for weather API
 			var weatherType = data.weather[0].description;
 			kTemp = data.main.temp;
-			var windSpeed = data.wind.speed;
 			var city = data.name;
 
 			//Temperature in F
