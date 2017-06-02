@@ -38,9 +38,6 @@ $(document).ready(function(){
 				}
 			});
 
-			windSpeed = (2.237*(windSpeed)).toFixed(1);
-			$('#windSpeed').html(windSpeed + ' mph'); //add km/h
-
 			if(fTemp>100){
 				$('body').css('background-image', 'url(https://s-media-cache-ak0.pinimg.com/originals/d5/78/b3/d578b36f9040efb1ccbce6794d4f0a84.jpg)');
 			} else if (fTemp>80){
