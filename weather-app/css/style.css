@@ -1,3 +1,19 @@
 body{
   background-size:cover;
+  font-family: 'Exo', sans-serif !important;
+}
+
+h1{
+	margin-top: 10% !important;
+	font-weight: bold;
+}
+
+.temp{
+	margin: 2%;
+	font-size: 2em;
+	color: #00cc99;
+}
+.location{
+	margin: 2%;
+	text-transform: capitalize;
 }

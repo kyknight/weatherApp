@@ -2,10 +2,13 @@ $(document).ready(function(){
 	var lat;
 	var long;
 
-	$.getJSON('http://ip-api.com/json', function(dataAlt){
+	$.getJSON('http://ip-api.com/json/?callback=?', function(dataAlt){
 		lat = dataAlt.lat;
 		long = dataAlt.lon;
-		var api = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&appid=db7f3c797e416d658e9c3441f3274add&callback=?';
+		var apiKey = 'db7f3c797e416d658e9c3441f3274add';
+		var api = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&appid='+apiKey;
+
+		console.log(api);//not logging
 
 		$.getJSON(api, function(data){
 			var fTemp;
@@ -23,16 +26,16 @@ $(document).ready(function(){
 			//Temperature in C
 			cTemp = (kTemp-273).toFixed(1);
 
-			$('#city').hmtl(city);
+			$('#city').html(city);
 			$('#weatherType').html(weatherType);
 			$('#fTemp').html(fTemp + ' &#8457;');
 				//click to change the temp from F to C (visa-versa)
 			$('#fTemp').click(function(){
 				if(tempSwap===false){
-					$('#fTemp').hmtl(fTemp + ' &#8457;');
+					$('#fTemp').html(fTemp + ' &#8457;');
 					tempSwap = true;
 				} else {
-					$('#fTemp').html(cTemp + ' &#8457;');
+					$('#fTemp').html(cTemp + ' &#8451;');
 					tempSwap = false;
 				}
 			});
